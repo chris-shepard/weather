@@ -15,10 +15,10 @@ class Weather extends React.Component {
 
     getUserLocation() {
         if ("geolocation" in navigator) {
-            navigator.geolocation.getCurrentPosition((success) => {
+            navigator.geolocation.getCurrentPosition((location) => {
                 this.setState({
-                    lat: success.coords.latitude,
-                    long: success.coords.longitude,
+                    lat: location.coords.latitude,
+                    long: location.coords.longitude,
                 })
             }, (error) => {
                 this.setState({
@@ -53,6 +53,7 @@ class Weather extends React.Component {
             return (
                 <div>
                     <Brand />
+                    <LocationSearch/>
                     <span>Success</span>
                 </div>
             )

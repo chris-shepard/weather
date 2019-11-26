@@ -1,13 +1,13 @@
 import React from 'react';
 import FormInput from '../../FormInput/FormInput';
+import './Location-Search.scss';
 
 class LocationSearch extends React.Component {
     constructor(props) {
         super(props);
 
         this.state = {
-            city: '',
-            state: '',
+            search: '',
             country: "US"
         }
     }
@@ -24,36 +24,24 @@ class LocationSearch extends React.Component {
         e.preventDefault();
 
         this.setState({
-            city: '',
-            state: ''
+            search: ''
         })
     }
 
 
     render() {
         return (
-            <form onSubmit={this.handleSubmit}>
+            <form onSubmit={this.handleSubmit} className="location-search">
                 <FormInput
                     type="text"
-                    name="city"
-                    value={this.state.city}
+                    name="search"
+                    value={this.state.search}
                     handleChange={this.handleChange}
-                    label="City"
+                    label="Find a Location"
+                    autoComplete="new-password" //Disables Chrome Autocomplete
                     required />
-                <FormInput
-                    type="text"
-                    name="state"
-                    value={this.state.state}
-                    handleChange={this.handleChange}
-                    label="State"
-                    required />
-                <FormInput
-                    type="text"
-                    name="country"
-                    value={this.state.country}
-                    label="Country"
-                    disabled="disabled" />
             </form>
+                    
         )
     }
 }

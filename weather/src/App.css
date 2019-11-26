@@ -5,6 +5,4 @@
   font-family: var(--font-family);
   display: flex;
   flex-direction: column;
-  justify-content: center;
-  align-items: center;
 }
