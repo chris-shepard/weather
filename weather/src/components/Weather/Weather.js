@@ -22,10 +22,15 @@ class Weather extends React.Component {
                 })
             }, (error) => {
                 this.setState({
-                    errorMessage: error.message
+                    errorMessage: error.message,
+                    userErrorMessage: "It looks like your location data isn't available. Search for a location to get Weather data."
                 })
             })
         } else {
+            this.setState({
+                errorMessage: "no browser support",
+                userErrorMessage: "Geolocation is not Supported on your browser. Please search for a City to get Weather data."
+            })
 
         }
     }
@@ -39,7 +44,7 @@ class Weather extends React.Component {
             return (
                 <div>
                     <Brand />
-                    <span> It looks like your location data isn't available. Search for a location to get Weather.</span>
+                    <span> {this.state.userErrorMessage}</span>
                     <LocationSearch/>
                 </div>)
         }
