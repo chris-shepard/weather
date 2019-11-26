@@ -1,0 +1,11 @@
+.spinner {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+
+    .brand {
+        position: static;
+        text-align: center;
+    }
+}

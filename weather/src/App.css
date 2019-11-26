@@ -1,0 +1,10 @@
+.App {
+  background: linear-gradient(to bottom right, var(--primary),var(--primary-faded));
+  min-height: 100vh;
+  color: var(--font-color);
+  font-family: var(--font-family);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
